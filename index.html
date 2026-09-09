@@ -3,211 +3,74 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Artist Portfolio & Shop - Discover & Buy Original Artworks</title>
-    <link rel="stylesheet" href="css/style.css">
+    <title>Multi-Timezone Digital Clock</title>
+    <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
 <body>
-    <!-- Navigation Bar -->
-    <nav class="navbar">
-        <div class="nav-container">
-            <div class="logo">
-                <i class="fas fa-palette"></i> Artist Studio
-            </div>
-            <ul class="nav-menu">
-                <li><a href="index.html" class="active">Home</a></li>
-                <li><a href="portfolio.html">Portfolio</a></li>
-                <li><a href="shop.html">Shop</a></li>
-                <li><a href="about.html">About</a></li>
-                <li><a href="contact.html">Contact</a></li>
-                <li><a href="cart.html" class="cart-link"><i class="fas fa-shopping-cart"></i> Cart (<span id="cart-count">0</span>)</a></li>
-            </ul>
-            <div class="hamburger">
-                <span></span>
-                <span></span>
-                <span></span>
-            </div>
-        </div>
-    </nav>
+    <div class="container">
+        <!-- Header -->
+        <header class="header">
+            <h1><i class="fas fa-globe"></i> Global Time Clock</h1>
+            <p>Real-time display of current time across multiple time zones</p>
+        </header>
 
-    <!-- Hero Section -->
-    <section class="hero">
-        <div class="hero-content">
-            <h1>Welcome to My Art Studio</h1>
-            <p>Discover unique handcrafted artworks created with passion and creativity</p>
-            <div class="hero-buttons">
-                <a href="portfolio.html" class="btn btn-primary">View Portfolio</a>
-                <a href="shop.html" class="btn btn-secondary">Shop Now</a>
+        <!-- Controls -->
+        <div class="controls">
+            <div class="search-box">
+                <input type="text" id="searchInput" placeholder="Search timezone..." class="search-input">
+                <i class="fas fa-search"></i>
             </div>
-        </div>
-        <div class="hero-image">
-            <div class="image-placeholder">
-                <i class="fas fa-image"></i>
-            </div>
-        </div>
-    </section>
-
-    <!-- Featured Works Section -->
-    <section class="featured-works">
-        <div class="container">
-            <h2>Featured Artworks</h2>
-            <p class="section-subtitle">Explore some of my latest creations</p>
             
-            <div class="artwork-grid">
-                <div class="artwork-card">
-                    <div class="artwork-image">
-                        <div class="image-placeholder-small">
-                            <i class="fas fa-image"></i>
-                        </div>
-                    </div>
-                    <div class="artwork-info">
-                        <h3>Abstract Harmony</h3>
-                        <p class="artist-name">Acrylic on Canvas</p>
-                        <p class="price">$450</p>
-                        <div class="rating">
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star-half-alt"></i>
-                        </div>
-                        <button class="btn btn-small" onclick="addToCart('Abstract Harmony', 450)">Add to Cart</button>
-                    </div>
-                </div>
+            <div class="format-controls">
+                <label class="toggle-label">
+                    <input type="checkbox" id="format24h" checked>
+                    <span class="toggle-switch"></span>
+                    <span class="toggle-text">24-hour format</span>
+                </label>
+                
+                <button class="btn btn-primary" id="addTimezoneBtn">
+                    <i class="fas fa-plus"></i> Add Timezone
+                </button>
+                
+                <button class="btn btn-secondary" id="resetBtn">
+                    <i class="fas fa-redo"></i> Reset
+                </button>
+            </div>
+        </div>
 
-                <div class="artwork-card">
-                    <div class="artwork-image">
-                        <div class="image-placeholder-small">
-                            <i class="fas fa-image"></i>
-                        </div>
-                    </div>
-                    <div class="artwork-info">
-                        <h3>Serene Landscape</h3>
-                        <p class="artist-name">Oil on Canvas</p>
-                        <p class="price">$650</p>
-                        <div class="rating">
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                        </div>
-                        <button class="btn btn-small" onclick="addToCart('Serene Landscape', 650)">Add to Cart</button>
-                    </div>
-                </div>
+        <!-- Clocks Grid -->
+        <div class="clocks-grid" id="clocksContainer">
+            <!-- Clocks will be inserted here -->
+        </div>
 
-                <div class="artwork-card">
-                    <div class="artwork-image">
-                        <div class="image-placeholder-small">
-                            <i class="fas fa-image"></i>
-                        </div>
-                    </div>
-                    <div class="artwork-info">
-                        <h3>Urban Dreams</h3>
-                        <p class="artist-name">Mixed Media</p>
-                        <p class="price">$550</p>
-                        <div class="rating">
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star-half-alt"></i>
-                        </div>
-                        <button class="btn btn-small" onclick="addToCart('Urban Dreams', 550)">Add to Cart</button>
-                    </div>
-                </div>
+        <!-- No Results Message -->
+        <div class="no-results" id="noResults" style="display: none;">
+            <i class="fas fa-search"></i>
+            <p>No timezones match your search</p>
+        </div>
+    </div>
 
-                <div class="artwork-card">
-                    <div class="artwork-image">
-                        <div class="image-placeholder-small">
-                            <i class="fas fa-image"></i>
-                        </div>
-                    </div>
-                    <div class="artwork-info">
-                        <h3>Colorful Soul</h3>
-                        <p class="artist-name">Watercolor</p>
-                        <p class="price">$350</p>
-                        <div class="rating">
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                        </div>
-                        <button class="btn btn-small" onclick="addToCart('Colorful Soul', 350)">Add to Cart</button>
-                    </div>
+    <!-- Add Timezone Modal -->
+    <div class="modal" id="addTimezoneModal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2>Add Timezone</h2>
+                <button class="modal-close" id="closeModalBtn"><i class="fas fa-times"></i></button>
+            </div>
+            <div class="modal-body">
+                <input type="text" id="timezoneSearchInput" placeholder="Search timezone..." class="modal-input">
+                <div class="timezone-list" id="timezoneList">
+                    <!-- Timezones will be listed here -->
                 </div>
             </div>
         </div>
-    </section>
+    </div>
 
-    <!-- Stats Section -->
-    <section class="stats">
-        <div class="container">
-            <div class="stat-item">
-                <h3>500+</h3>
-                <p>Artworks Created</p>
-            </div>
-            <div class="stat-item">
-                <h3>1000+</h3>
-                <p>Happy Collectors</p>
-            </div>
-            <div class="stat-item">
-                <h3>15+</h3>
-                <p>Years Experience</p>
-            </div>
-            <div class="stat-item">
-                <h3>50+</h3>
-                <p>Awards Won</p>
-            </div>
-        </div>
-    </section>
+    <!-- Toast Notification -->
+    <div class="toast" id="toast"></div>
 
-    <!-- Newsletter Section -->
-    <section class="newsletter">
-        <div class="container">
-            <h2>Stay Updated</h2>
-            <p>Subscribe to get updates on new artworks and exclusive offers</p>
-            <form class="newsletter-form">
-                <input type="email" placeholder="Enter your email" required>
-                <button type="submit" class="btn btn-primary">Subscribe</button>
-            </form>
-        </div>
-    </section>
-
-    <!-- Footer -->
-    <footer class="footer">
-        <div class="container">
-            <div class="footer-content">
-                <div class="footer-section">
-                    <h4>About</h4>
-                    <p>Professional artist showcasing handcrafted artworks and original creations.</p>
-                </div>
-                <div class="footer-section">
-                    <h4>Quick Links</h4>
-                    <ul>
-                        <li><a href="portfolio.html">Portfolio</a></li>
-                        <li><a href="shop.html">Shop</a></li>
-                        <li><a href="about.html">About Me</a></li>
-                        <li><a href="contact.html">Contact</a></li>
-                    </ul>
-                </div>
-                <div class="footer-section">
-                    <h4>Follow</h4>
-                    <div class="social-links">
-                        <a href="#"><i class="fab fa-facebook"></i></a>
-                        <a href="#"><i class="fab fa-instagram"></i></a>
-                        <a href="#"><i class="fab fa-twitter"></i></a>
-                        <a href="#"><i class="fab fa-pinterest"></i></a>
-                    </div>
-                </div>
-            </div>
-            <div class="footer-bottom">
-                <p>&copy; 2024 Artist Studio. All rights reserved.</p>
-            </div>
-        </div>
-    </footer>
-
-    <script src="js/script.js"></script>
+    <script src="timezones.js"></script>
+    <script src="script.js"></script>
 </body>
 </html>
