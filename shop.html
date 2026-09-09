@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shop - Artist Studio</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <!-- Navigation Bar -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="logo">
+                <i class="fas fa-palette"></i> Artist Studio
+            </div>
+            <ul class="nav-menu">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="portfolio.html">Portfolio</a></li>
+                <li><a href="shop.html" class="active">Shop</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="contact.html">Contact</a></li>
+                <li><a href="cart.html" class="cart-link"><i class="fas fa-shopping-cart"></i> Cart (<span id="cart-count">0</span>)</a></li>
+            </ul>
+            <div class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Shop Header -->
+    <section class="shop-header">
+        <div class="container">
+            <h1>Shop</h1>
+            <p>Browse and buy original artworks</p>
+        </div>
+    </section>
+
+    <!-- Filters and Products -->
+    <section style="padding: 4rem 0;">
+        <div class="container">
+            <div class="filters">
+                <h3 style="margin-bottom: 1rem;">Filter by</h3>
+                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 2rem;">
+                    <div class="filter-group">
+                        <label>Medium</label>
+                        <select>
+                            <option>All</option>
+                            <option>Acrylic</option>
+                            <option>Oil</option>
+                            <option>Watercolor</option>
+                            <option>Mixed Media</option>
+                            <option>Digital</option>
+                        </select>
+                    </div>
+                    <div class="filter-group">
+                        <label>Price Range</label>
+                        <select>
+                            <option>All Prices</option>
+                            <option>Under $300</option>
+                            <option>$300 - $500</option>
+                            <option>$500 - $750</option>
+                            <option>Over $750</option>
+                        </select>
+                    </div>
+                    <div class="filter-group">
+                        <label>Sort By</label>
+                        <select>
+                            <option>Latest</option>
+                            <option>Price: Low to High</option>
+                            <option>Price: High to Low</option>
+                            <option>Most Popular</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+
+            <div class="artwork-grid">
+                <div class="artwork-card">
+                    <div class="artwork-image">
+                        <div class="image-placeholder-small">
+                            <i class="fas fa-image"></i>
+                        </div>
+                    </div>
+                    <div class="artwork-info">
+                        <h3>Sunset Valley</h3>
+                        <p class="artist-name">Oil Painting</p>
+                        <p class="price">$750</p>
+                        <div class="rating">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                        <button class="btn btn-small" onclick="addToCart('Sunset Valley', 750)">Add to Cart</button>
+                    </div>
+                </div>
+
+                <div class="artwork-card">
+                    <div class="artwork-image">
+                        <div class="image-placeholder-small">
+                            <i class="fas fa-image"></i>
+                        </div>
+                    </div>
+                    <div class="artwork-info">
+                        <h3>Modern Geometry</h3>
+                        <p class="artist-name">Acrylic</p>
+                        <p class="price">$500</p>
+                        <div class="rating">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star-half-alt"></i>
+                        </div>
+                        <button class="btn btn-small" onclick="addToCart('Modern Geometry', 500)">Add to Cart</button>
+                    </div>
+                </div>
+
+                <div class="artwork-card">
+                    <div class="artwork-image">
+                        <div class="image-placeholder-small">
+                            <i class="fas fa-image"></i>
+                        </div>
+                    </div>
+                    <div class="artwork-info">
+                        <h3>Ocean Breeze</h3>
+                        <p class="artist-name">Watercolor</p>
+                        <p class="price">$380</p>
+                        <div class="rating">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                        <button class="btn btn-small" onclick="addToCart('Ocean Breeze', 380)">Add to Cart</button>
+                    </div>
+                </div>
+
+                <div class="artwork-card">
+                    <div class="artwork-image">
+                        <div class="image-placeholder-small">
+                            <i class="fas fa-image"></i>
+                        </div>
+                    </div>
+                    <div class="artwork-info">
+                        <h3>Midnight Dreams</h3>
+                        <p class="artist-name">Mixed Media</p>
+                        <p class="price">$600</p>
+                        <div class="rating">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star-half-alt"></i>
+                        </div>
+                        <button class="btn btn-small" onclick="addToCart('Midnight Dreams', 600)">Add to Cart</button>
+                    </div>
+                </div>
+
+                <div class="artwork-card">
+                    <div class="artwork-image">
+                        <div class="image-placeholder-small">
+                            <i class="fas fa-image"></i>
+                        </div>
+                    </div>
+                    <div class="artwork-info">
+                        <h3>Ethereal Bliss</h3>
+                        <p class="artist-name">Digital Art</p>
+                        <p class="price">$280</p>
+                        <div class="rating">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                        <button class="btn btn-small" onclick="addToCart('Ethereal Bliss', 280)">Add to Cart</button>
+                    </div>
+                </div>
+
+                <div class="artwork-card">
+                    <div class="artwork-image">
+                        <div class="image-placeholder-small">
+                            <i class="fas fa-image"></i>
+                        </div>
+                    </div>
+                    <div class="artwork-info">
+                        <h3>Forest Mystique</h3>
+                        <p class="artist-name">Oil on Canvas</p>
+                        <p class="price">$820</p>
+                        <div class="rating">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                        <button class="btn btn-small" onclick="addToCart('Forest Mystique', 820)">Add to Cart</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h4>About</h4>
+                    <p>Professional artist showcasing handcrafted artworks and original creations.</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="portfolio.html">Portfolio</a></li>
+                        <li><a href="shop.html">Shop</a></li>
+                        <li><a href="about.html">About Me</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Follow</h4>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-pinterest"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 Artist Studio. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/script.js"></script>
+</body>
+</html>
