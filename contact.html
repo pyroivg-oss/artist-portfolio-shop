@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact - Artist Studio</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <!-- Navigation Bar -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="logo">
+                <i class="fas fa-palette"></i> Artist Studio
+            </div>
+            <ul class="nav-menu">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="portfolio.html">Portfolio</a></li>
+                <li><a href="shop.html">Shop</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="contact.html" class="active">Contact</a></li>
+                <li><a href="cart.html" class="cart-link"><i class="fas fa-shopping-cart"></i> Cart (<span id="cart-count">0</span>)</a></li>
+            </ul>
+            <div class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Contact Header -->
+    <section class="shop-header">
+        <div class="container">
+            <h1>Get in Touch</h1>
+            <p>I'd love to hear from you. Let's connect!</p>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section style="padding: 4rem 0;">
+        <div class="contact-container">
+            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 3rem; margin-bottom: 3rem;">
+                <div>
+                    <h3 style="color: var(--dark-color); margin-bottom: 1rem;">Contact Information</h3>
+                    <div style="margin-bottom: 2rem;">
+                        <h4 style="color: var(--primary-color); margin-bottom: 0.5rem;"><i class="fas fa-map-marker-alt"></i> Location</h4>
+                        <p>Artist Studio<br>123 Creative Street<br>Art City, AC 12345</p>
+                    </div>
+                    <div style="margin-bottom: 2rem;">
+                        <h4 style="color: var(--primary-color); margin-bottom: 0.5rem;"><i class="fas fa-phone"></i> Phone</h4>
+                        <p><a href="tel:+1234567890" style="color: var(--text-color); text-decoration: none;">(123) 456-7890</a></p>
+                    </div>
+                    <div style="margin-bottom: 2rem;">
+                        <h4 style="color: var(--primary-color); margin-bottom: 0.5rem;"><i class="fas fa-envelope"></i> Email</h4>
+                        <p><a href="mailto:info@artiststudio.com" style="color: var(--text-color); text-decoration: none;">info@artiststudio.com</a></p>
+                    </div>
+                    <div style="margin-bottom: 2rem;">
+                        <h4 style="color: var(--primary-color); margin-bottom: 0.5rem;"><i class="fas fa-clock"></i> Business Hours</h4>
+                        <p>Monday - Friday: 9:00 AM - 6:00 PM<br>Saturday: 10:00 AM - 4:00 PM<br>Sunday: Closed</p>
+                    </div>
+                </div>
+
+                <form class="contact-form">
+                    <h3 style="color: var(--dark-color); margin-bottom: 1.5rem;">Send us a Message</h3>
+                    <div class="form-group">
+                        <label for="name">Your Name</label>
+                        <input type="text" id="name" name="name" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Email Address</label>
+                        <input type="email" id="email" name="email" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="subject">Subject</label>
+                        <input type="text" id="subject" name="subject" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="message">Message</label>
+                        <textarea id="message" name="message" required></textarea>
+                    </div>
+                    <button type="submit" class="btn btn-primary" style="width: 100%;">Send Message</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section style="padding: 4rem 0; background: var(--light-color);">
+        <div class="container">
+            <h2 style="font-size: 2.5rem; text-align: center; color: var(--dark-color); margin-bottom: 3rem;">Frequently Asked Questions</h2>
+            <div style="max-width: 800px; margin: 0 auto;">
+                <div style="background: white; padding: 2rem; margin-bottom: 1.5rem; border-radius: 10px; box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);">
+                    <h4 style="color: var(--primary-color); margin-bottom: 0.5rem;">How long does shipping take?</h4>
+                    <p style="color: var(--text-color);">Shipping typically takes 5-10 business days depending on your location. International orders may take 2-4 weeks.</p>
+                </div>
+                <div style="background: white; padding: 2rem; margin-bottom: 1.5rem; border-radius: 10px; box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);">
+                    <h4 style="color: var(--primary-color); margin-bottom: 0.5rem;">Do you accept custom commissions?</h4>
+                    <p style="color: var(--text-color);">Yes! I accept custom art commissions. Please contact us for details and pricing. Commission timelines vary based on complexity.</p>
+                </div>
+                <div style="background: white; padding: 2rem; margin-bottom: 1.5rem; border-radius: 10px; box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);">
+                    <h4 style="color: var(--primary-color); margin-bottom: 0.5rem;">What is your return policy?</h4>
+                    <p style="color: var(--text-color);">Artworks can be returned within 30 days of purchase if they arrive damaged or not as described. Custom pieces are non-refundable once completed.</p>
+                </div>
+                <div style="background: white; padding: 2rem; margin-bottom: 1.5rem; border-radius: 10px; box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);">
+                    <h4 style="color: var(--primary-color); margin-bottom: 0.5rem;">Do you offer framing services?</h4>
+                    <p style="color: var(--text-color);">Yes, we offer professional framing services. Please contact us for quotes and available options.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h4>About</h4>
+                    <p>Professional artist showcasing handcrafted artworks and original creations.</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="portfolio.html">Portfolio</a></li>
+                        <li><a href="shop.html">Shop</a></li>
+                        <li><a href="about.html">About Me</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Follow</h4>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-pinterest"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 Artist Studio. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/script.js"></script>
+</body>
+</html>
